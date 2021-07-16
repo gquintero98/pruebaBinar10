@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 
@@ -11,11 +12,15 @@ import { SharedRoutingModule } from './shared-routing.module';
   imports: [
     CommonModule,
     SharedRoutingModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   exports:[
-    ModalModule
+    ModalModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

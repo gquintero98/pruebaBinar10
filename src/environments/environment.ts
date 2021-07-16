@@ -12,7 +12,10 @@ export const environment = {
   login: baseurl + 'login/',
   logout: baseurl + 'logout/',
   registro: baseurl + 'registro/',
-  usuario: baseurl + 'usuario/'
+  usuario: baseurl + 'usuario/',
+  actualizar: baseurl + 'usuario/actualizar/',
+  filtrarU: baseurl + 'usuario'
+
 
 };
 

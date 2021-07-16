@@ -43,15 +43,11 @@
 
 
   .boton-principal{
-    /* background: #38B6FF;
-    border-color: #38B6FF; */
     background: linear-gradient(to right, #1977d3,#1d94f2);
     border-radius: 30px;
   }
 
   .boton-principal:hover{
-    /* background-color: #0062cc;
-    border-color: #005cbf; */
     background: linear-gradient(to left, #1977d3,#1977d3);
 
   }
@@ -64,8 +60,6 @@
   }
 
   .boton-secundario:hover{
-    /* background-color: #0062cc;
-    border-color: #005cbf; */
     background: linear-gradient(to left, #495057,#495057);
 
   }
@@ -90,7 +84,6 @@
 *::-webkit-scrollbar-thumb {
     background-color: #343A40;
     border-radius: 20px;
-    /* border: 3px solid #d3d3d3; */
 }
 
 .mainbody{
@@ -117,10 +110,6 @@
     margin: 16px;
     margin-left: 0px;
     
-}
-.custom-control-input{
-    border-color: yellow;
-    background-color: tomato;
 }
 
 .form-control2{

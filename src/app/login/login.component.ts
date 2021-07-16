@@ -38,11 +38,12 @@ export class LoginComponent implements OnInit {
       this.token.setToken(data['key']);
       this.router.navigate(['/dashboard/users']);
       //alert que indica que ya se inicio sesión
-      Swal.fire(
-        'Sesión iniciada!',
-        '',
-        'success',
-      )
+      Swal.fire({
+        icon: 'success',
+        title: 'Sesión iniciada',
+        showConfirmButton: false,
+        timer: 1500
+      })
       
     },(error) => {
       alert('ocurrió un error' + error);

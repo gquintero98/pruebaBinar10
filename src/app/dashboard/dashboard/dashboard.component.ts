@@ -19,11 +19,12 @@ export class DashboardComponent implements OnInit {
 
     window.localStorage.removeItem('token_binar10')
 
-    Swal.fire(
-      'Sesión cerrada!',
-      '',
-      'success'
-    )
+    Swal.fire({
+      icon: 'success',
+      title: 'Sesión finalizada',
+      showConfirmButton: false,
+      timer: 1500
+    })
 
     this.router.navigate(['/login']);
 

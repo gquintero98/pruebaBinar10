@@ -3,6 +3,7 @@ import { UsuariosService } from '../../services/usuarios.service'
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { FormBuilder, Validators } from '@angular/forms';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 
 
@@ -14,7 +15,7 @@ import Swal from 'sweetalert2'
 export class UsuariosComponent implements OnInit {
 
   modalRef: BsModalRef;
-
+  nombre="";
   config = {
     animated: true,
     class: 'modal-dialog-centered',
@@ -25,12 +26,13 @@ export class UsuariosComponent implements OnInit {
 
   constructor(private usuarioService:UsuariosService,
     private modalService: BsModalService,
-    private formbuilder: FormBuilder
+    private formbuilder: FormBuilder,
+    private router: Router,
+
 
     ) { }
 
   form
-  detalleUsuario
 
   usuarios:any = [];
 
@@ -39,40 +41,34 @@ export class UsuariosComponent implements OnInit {
   }
 // Funcion para listar usuarios
   usuario(){
-    this.usuarioService.usuario().toPromise().then(data => {
+    this.usuarioService.usuario(this.nombre).toPromise().then(data => {
       console.log(data)
       this.usuarios = data;
     }).catch(error => console.log(error))
   }
-// Funcion para ver detalle de un usuario
-  async getDetail(id){
-
-    this.usuarioService.detalleUsuario(id).toPromise().then((data: any) => {
-      
-      this.detalleUsuario=data
-      
-      return data
-
-    }).catch(error => console.log(error))
-    
-
-  }
 
 // Funcion para levantar modal
- async AbrirModal(template: TemplateRef<any>,id) {
+ async AbrirModal(template: TemplateRef<any>,item) {
 
-  this.loadingAlert();
-  await this.getDetail(id);
-  Swal.close()
-  this.modalRef = this.modalService.show(template,this.config);
-  this.form = this.formbuilder.group({
-    cedula:[this.detalleUsuario.cedula],
-    nombre:[this.detalleUsuario.nombre],
-    apellido:[this.detalleUsuario.apellido],
-    email:[this.detalleUsuario.email]
-  }); 
-  console.log(this.detalleUsuario)
-}
+// Funcion para ver detalle de un usuario
+  this.loadingAlert(
+  this.usuarioService.detalleUsuario(item.id).toPromise().then((data: any) => {    
+    this.form = this.formbuilder.group({
+      cedula:[data.cedula],
+      nombre:[data.nombre],
+      apellido:[data.apellido],
+      email:[data.email],
+      id:[data.id],
+      entidad:[data?.entidad]
+    }); 
+
+    this.modalRef = this.modalService.show(template,this.config);
+    Swal.close()
+
+  }).catch(error => console.log(error))
+);
+
+ }
   loadingAlert(data?) {
     Swal.fire({
       title: '',
@@ -89,6 +85,27 @@ export class UsuariosComponent implements OnInit {
         Swal.close();
       }
     });
+  }
+  actualizar(){
+    let value = this.form.value;
+    console.log(value);
+    this.usuarioService.actualizar(this.form.value).subscribe((data) => {
+
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Usuario actualizado con éxito',
+        showConfirmButton: false,
+        timer: 1500
+      }).then((result) => {
+        location.reload();
+      });
+      
+
+      console.log(data)
+    },(error) => {
+      console.log(error)
+    })
   }
 
 }

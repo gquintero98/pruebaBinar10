@@ -1,8 +1,13 @@
 <!-- Estructura de la tabla -->
+<div class="row mx-1">
+  <input class="form-control col-lg-9 col-md-9 col-12" [(ngModel)]="nombre" (keyup.enter)="usuario()" placeholder="Filtro por nombre"/>
+  <button (click)="usuario()"class="btn btn-secondary btn-primary boton-principal text-center text-center col-lg-2 col-md-2 col-12 ml-auto">Buscar</button>
+</div>
+
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">Id</th>
         <th scope="col">Nombre</th>
         <th scope="col">Apellido</th>
         <th scope="col">Cedula</th>
@@ -18,7 +23,7 @@
         <td>{{item.cedula}}</td>
         <td>{{item.email}}</td>
         <!-- Levantar modal cuando presione click en el icono del ojo -->
-        <td><button (click)="AbrirModal(edit,item.id)" class="bg-transparent border-0"><i class="fas fa-eye"></i></button></td>
+        <td><button (click)="AbrirModal(edit,item)" class="bg-transparent border-0"><i class="fas fa-eye"></i></button></td>
       </tr>
     </tbody>
   </table>
@@ -56,10 +61,16 @@
                     <input type="text" class="form-control px-2"  placeholder="Email" formControlName="email"/>
                 </div>
             </div>
+
+            <div class="col-7 my-2">
+              <div class="input-filter">
+                  <input type="text" class="form-control px-2"  placeholder="EPS" formControlName="entidad"/>
+              </div>
+          </div>
               
     <!-- Boton para guardar registro de usuario editado-->
             <div class="col-7 my-2 row mt-4 justify-content-center">
-                <button class="btn btn-secondary btn-primary boton-principal col-md-5 col-12 text-center text-center">Guardar</button>
+                <button (click)="actualizar()"class="btn btn-secondary btn-primary boton-principal col-md-5 col-12 text-center text-center">Guardar</button>
             </div>
     
     

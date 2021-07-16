@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
 
   form
 
+  //Inicializar el formulario de registro
   ngOnInit(): void {
     this.form = this.formbuilder.group({
       username: [null],
@@ -47,11 +48,12 @@ export class RegisterComponent implements OnInit {
       let value = this.form.value;
       console.log(value);
       this.registerService.registro(this.form.value).subscribe((data) => {
-        Swal.fire(
-          'Usuario creado con exito!',
-          '',
-          'success',
-        )
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuario creado con éxito',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.router.navigate(['/login']);
         console.log(data)
       },(error) => {
