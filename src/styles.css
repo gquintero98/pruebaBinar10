@@ -1,1 +1,243 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face{
+    font-family: OpenSans;
+    src: url(assets/fonts/OpenSans-Regular.ttf) format('opentype');
+}
+
+@font-face {
+    font-family: "FontAwesome";
+    font-weight: normal;
+      font-display: auto;
+    font-style: normal;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2") format("woff2");
+}
+
+.form-control{
+    height: 48px !important;
+    box-shadow: 0px 4px 4px rgba(51, 51, 51, 0.04), 0px 4px 16px rgba(51, 51, 51, 0.08) !important;
+    border: none !important;
+}
+
+/* =========== COLORES ============== */
+:root {
+    --color1: #38b6ff;
+    --color2: #5ce1e6;
+    --color3: #004aad;
+    --color4: #001d44;
+    --color5: #8898aa;
+    --color6: #b4b4b4;
+    --color7: #ffffff;
+  
+    --color-shadow1: #38b6ff88;
+    --color-shadow2: rgba(50,50,93,.15);
+}
+  
+.vw-30{
+    width: 30vw !important;
+}
+  
+.w-95{
+    width: 95% !important;
+}
+
+
+  .boton-principal{
+    /* background: #38B6FF;
+    border-color: #38B6FF; */
+    background: linear-gradient(to right, #1977d3,#1d94f2);
+    border-radius: 30px;
+  }
+
+  .boton-principal:hover{
+    /* background-color: #0062cc;
+    border-color: #005cbf; */
+    background: linear-gradient(to left, #1977d3,#1977d3);
+
+  }
+
+  .boton-secundario{
+    background: linear-gradient(to right, #495057,#6c757d);
+    border-radius: 30px;
+    border:none;
+
+  }
+
+  .boton-secundario:hover{
+    /* background-color: #0062cc;
+    border-color: #005cbf; */
+    background: linear-gradient(to left, #495057,#495057);
+
+  }
+  
+/* SCROLLBAR The emerging W3C standard
+    that is currently Firefox-only */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color2) #d3d3d3;
+    scroll-margin: 5px 0px;
+}
+  
+/* SCROLLBAR Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+*::-webkit-scrollbar-track {
+    background: #d3d3d3;
+    border-radius: 20px;
+    margin: 0px 0px;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #343A40;
+    border-radius: 20px;
+    /* border: 3px solid #d3d3d3; */
+}
+
+.mainbody{
+    background: var(--color4);
+    font-family: OpenSans;
+    font-size: 80%;
+    color: var(--color5) !important; 
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.input{
+    height: 45px;
+    margin: 16px 0px;
+    background-color: white;
+    border-radius: .375rem;
+    box-shadow: 0 1px 3px rgba(50,50,93,.15),0 1px 0 rgba(0,0,0,.02);
+}
+.form-control:focus{
+    border-color: #fff;
+    box-shadow: 0px 0px 0px #000;
+}
+.form-check{
+    margin: 16px;
+    margin-left: 0px;
+    
+}
+.custom-control-input{
+    border-color: yellow;
+    background-color: tomato;
+}
+
+.form-control2{
+    margin: auto;
+    font-family: OpenSans, sans-serif;
+    font-size: 120%;
+    border: 0px;
+    padding-left: 0px;
+}
+
+.btn{
+    box-shadow: 0 7px 14px rgba(50,50,93,.1),0 3px 6px rgba(0,0,0,.08) !important;
+}
+.form-control::placeholder { color: var(--color5); }
+
+a{
+    color: var(--color5);
+}
+a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+
+/* <------------------------DropDown ---------------------<*/
+.drop-toggle{
+    background-color: transparent;
+    border: none;
+    border-radius: .375rem;
+    /* border-bottom: 1px solid black; */
+    color: #495057 !important;
+    font-size: 120%;
+    padding: 0.375rem 0.75rem;
+    cursor: pointer;
+    cursor: hand;
+    width: 100%;
+    text-align: left;
+}
+#typeahead .drop-toggle{
+    height: 45px;
+    border-radius: .375rem;
+    box-shadow: 0 1px 3px rgba(50,50,93,.15),0 1px 0 rgba(0,0,0,.02);
+    background-color: var(--color7);
+    color: #495057 !important;
+    padding: 0.250rem 0.75rem;
+    cursor: pointer;
+    cursor: hand;
+    width: 100%;
+    text-align: left;
+  }
+.typeahead{
+    padding: 0.250rem 0.75rem;
+}
+.drop-focused{
+    background-color: var(--color7);
+    border-bottom: none;
+    border-radius: .375rem !important;
+    border-top-left-radius: .375rem !important;
+    border-top-right-radius: .375rem !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+.drop-toggle svg{
+    float:right !important;
+    margin-top: 4px !important;
+}
+.drop-show {
+    padding: 0.375rem 0.75rem;
+    width: calc(100% - 30px);
+    max-height: 196px;
+    background-color: var(--color7);
+    border-bottom-left-radius: .375rem !important;
+    border-bottom-right-radius: .375rem !important;
+    position: absolute;
+    z-index: 500;
+    -webkit-box-shadow: 0 1px 3px rgba(50,50,93,.15);
+    -moz-box-shadow: 0 1px 3px rgba(50,50,93,.15);
+    box-shadow: 0 1px 3px rgba(50,50,93,.15);
+    overflow: auto;
+}
+.drop-selected {
+    max-height: 196px;
+    overflow: auto;
+}
+#typeahead .drop-show {
+    padding: 0.375rem 0.75rem;
+    width: calc(100% - 30px);
+    max-height: 196px;
+    background-color: var(--color7);
+    border-bottom-left-radius: .375rem !important;
+    border-bottom-right-radius: .375rem !important;
+    position: absolute;
+    z-index: 500;
+    -webkit-box-shadow: 0 1px 3px rgba(50,50,93,.15);
+    -moz-box-shadow: 0 1px 3px rgba(50,50,93,.15);
+    box-shadow: 0 1px 3px rgba(50,50,93,.15);
+    overflow: auto;
+}
+.drop-show label{
+    display:block;
+    font-size: 120%;
+    color: #495057;
+    cursor: pointer;
+    padding: 0px;
+}
+.drop-show label:hover{
+    background-color: var(--color6) !important;
+}
+.drop-show label span{
+    display:inline-block;
+}
+.drop-divider{
+    background: #495057;
+    width: 98%;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}

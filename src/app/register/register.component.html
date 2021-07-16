@@ -1,0 +1,55 @@
+<div class="container-azul d-flex my-auto">
+
+    <form [formGroup]="form" (ngSubmit)="Register()" class="tarjeta-register px-5 my-auto" >
+
+        <div class="d-flex justify-content-center">
+            <i class="fas fa-crown icon_corona"></i>
+        </div>
+
+
+        <h3 style="font-family: OpenSans;" class="text-center">¡Registrarse!</h3>
+
+
+        <div class="row">
+
+            <div class="col-6 col-md-6 d-flex flex-column mb-4 justify-center">           
+                <input class="form-control mx-2 px-2 border border-primary" placeholder="Usuario" formControlName="username">             
+            </div>
+            <div class="col-6 col-md-6 d-flex flex-column mb-4  justify-center">           
+                <input class="form-control mx-2 px-2 border border-primary" placeholder="Contraseña" formControlName="password">             
+            </div>
+            
+            <div class="col-6 col-md-6 d-flex flex-column mb-4  justify-center">           
+                <input class="form-control mx-2 px-2 border border-primary" placeholder="Confirmar contraseña" formControlName="password2">             
+            </div>
+            <div class="col-6 col-md-6 d-flex flex-column mb-4  justify-center">           
+                <input class="form-control mx-2 px-2 border border-primary" placeholder="E-mail" formControlName="email">             
+            </div>          
+            <div class="col-6 col-md-6 d-flex flex-column mb-4  justify-center">           
+                <input class="form-control mx-2 px-2 border border-primary" placeholder="Nombre" formControlName="nombre">             
+            </div>
+            <div class="col-6 col-md-6 d-flex flex-column mb-4  justify-center">           
+                <input class="form-control mx-2 px-2 border border-primary" placeholder="Apellido" formControlName="apellido">             
+            </div>        
+            <div class="col-6 col-md-6 d-flex flex-column mb-4  justify-center">           
+                <input class="form-control mx-2 px-2 border border-primary" placeholder="Cedula" formControlName="cedula">             
+            </div>
+            <div class="col-6 col-md-6 d-flex flex-column mb-1 justify-center">           
+                <input class="form-control mx-2 px-2 border border-primary" placeholder="Entidad" formControlName="entidad">             
+            </div>
+
+            <div class="col-12 col-md-12 d-flex flex-column mb-4  justify-center">   
+                <input type="file" class="form-control-file" (change)="cargarImagen($event)" id="exampleFormControlFile1">
+            </div>
+
+        </div>
+        
+        <div class="row mt-4 justify-content-center">
+            <div class="col-md-4 col-12 text-center"><button class="btn btn-primary boton-secundario btn-block" routerLink="/login">volver</button></div>
+            <div class="col-md-4 col-12 text-center"><button type="submit" class="btn btn-primary boton-principal btn-block">Registrarse</button></div>
+        </div>
+        
+    </form>
+
+</div>
+
