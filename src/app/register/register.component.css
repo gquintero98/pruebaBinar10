@@ -7,7 +7,7 @@
 
 .tarjeta-register{
     width: 30% !important;
-    height: 70%;
+    height: auto;
     margin: auto;
     margin-bottom: 170px;
     max-height: auto !important;
@@ -79,9 +79,8 @@
     font-size: 120% !important;
 }
 @media (max-width: 600px) {
-    .tarjeta-login {
-      width: 340px !important;
-      margin-top: -39.8% !important;
+    .tarjeta-register {
+      width: 90% !important;
       
       /* margin-bottom: 90px ; */
     }

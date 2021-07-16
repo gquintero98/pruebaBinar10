@@ -5,7 +5,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { SharedRoutingModule } from './shared-routing.module';
 
-
+//Shared module Para compartir servicios entre el login y el dashboard
 @NgModule({
   declarations: [],
   imports: [

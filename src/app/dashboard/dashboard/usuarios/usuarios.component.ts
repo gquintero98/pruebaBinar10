@@ -37,14 +37,14 @@ export class UsuariosComponent implements OnInit {
   ngOnInit(): void {
     this.usuario();
   }
-
+// Funcion para listar usuarios
   usuario(){
     this.usuarioService.usuario().toPromise().then(data => {
       console.log(data)
       this.usuarios = data;
     }).catch(error => console.log(error))
   }
-
+// Funcion para ver detalle de un usuario
   async getDetail(id){
 
     this.usuarioService.detalleUsuario(id).toPromise().then((data: any) => {
@@ -58,7 +58,7 @@ export class UsuariosComponent implements OnInit {
 
   }
 
-
+// Funcion para levantar modal
  async AbrirModal(template: TemplateRef<any>,id) {
 
   this.loadingAlert();
@@ -72,9 +72,7 @@ export class UsuariosComponent implements OnInit {
     email:[this.detalleUsuario.email]
   }); 
   console.log(this.detalleUsuario)
-    // await this.getDetail(id)  
 }
-
   loadingAlert(data?) {
     Swal.fire({
       title: '',

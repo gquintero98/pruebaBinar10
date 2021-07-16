@@ -2,12 +2,13 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+//baseurl del API
 const baseurl = 'https://apiandres.herokuapp.com/api/';
 
 export const environment = {
   production: false,
 
-  /** Inicio de sesión y Registro */
+  /** URL, Inicio de sesión, registro y listar usuario */
   login: baseurl + 'login/',
   logout: baseurl + 'logout/',
   registro: baseurl + 'registro/',

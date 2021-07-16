@@ -10,7 +10,8 @@ export class loginService {
   constructor(private httpClient: HttpClient) { }
 
   headers = new HttpHeaders({'Content-Type': 'application/json'})
-
+  
+  // servicio para acceder al sistema
   login(data){
     return this.httpClient.post(environment.login, data, {headers: this.headers});
   }

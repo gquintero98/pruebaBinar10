@@ -1,14 +1,13 @@
 <div class="container-azul d-flex my-auto">
-
+    <!-- Formulario de tarjeta con funcion ingresar(), se ejecuta una vez presione el inicio de sesion -->
     <form [formGroup]="form" (ngSubmit)="Ingresar()" class="tarjeta-login " >
-
+        <!-- Estructura de la tarjeta -->
         <div class="header-login">
             <div class="header-login-text">
                 <i class="fas fa-crown icon_corona"></i>
 
             </div>
         </div>
-
         <div class="body-login">
             <h3 style="font-family: OpenSans;" class="text-center mb-4">¡Welcome back!</h3>
 
@@ -28,7 +27,9 @@
              </div>
 
             <div class="row mt-4 justify-content-center">
+                <!-- Boton me envia al formulario de registro -->
                 <div class="col-md-5 col-12 text-center text-center"><button type="submit" class="btn btn-primary boton-secundario btn-block" routerLink="/register">Registrarse</button></div>
+                <!-- Boton me envia al inicio de sesión -->
                 <div class="col-md-5 col-12 text-center text-center"><button type="submit" class="btn btn-primary boton-principal btn-block">Iniciar sesión</button></div>
 
             </div>

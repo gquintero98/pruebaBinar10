@@ -31,11 +31,13 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  //funcion para loguearse al sistema
   Ingresar(){
     this.loginService.login(this.form.value).subscribe((data) => {
       
       this.token.setToken(data['key']);
       this.router.navigate(['/dashboard/users']);
+      //alert que indica que ya se inicio sesión
       Swal.fire(
         'Sesión iniciada!',
         '',

@@ -1,5 +1,5 @@
 <div class="container-azul d-flex my-auto">
-
+    <!-- Formulario para registrar nuevo usuario -->
     <form [formGroup]="form" (ngSubmit)="Register()" class="tarjeta-register px-5 my-auto" >
 
         <div class="d-flex justify-content-center">
@@ -9,7 +9,7 @@
 
         <h3 style="font-family: OpenSans;" class="text-center">¡Registrarse!</h3>
 
-
+    <!-- Estructura del formulario -->
         <div class="row">
 
             <div class="col-6 col-md-6 d-flex flex-column mb-4 justify-center">           
@@ -44,8 +44,10 @@
 
         </div>
         
-        <div class="row mt-4 justify-content-center">
+        <div class="row my-4 justify-content-center">
+            <!-- Boton para volver al login -->
             <div class="col-md-4 col-12 text-center"><button class="btn btn-primary boton-secundario btn-block" routerLink="/login">volver</button></div>
+            <!-- Boton para registrarse -->
             <div class="col-md-4 col-12 text-center"><button type="submit" class="btn btn-primary boton-principal btn-block">Registrarse</button></div>
         </div>
         

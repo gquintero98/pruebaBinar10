@@ -80,7 +80,7 @@
 @media (max-width: 600px) {
     .tarjeta-login {
       width: 340px !important;
-      margin-top: -39.8% !important;
+      /* margin-top: -39.8% !important; */
       
       /* margin-bottom: 90px ; */
     }

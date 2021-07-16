@@ -16,19 +16,8 @@ export class RegisterService {
             'Content-Type':'multipart/form-data'      
           })
 
-
-  registro(data,file){
-    const fd= new FormData;
-    fd.append('imagen',file,file.name);
-    fd.append('username',data.username);
-    fd.append('password',data.password);
-    fd.append('password2',data.password2);
-    fd.append('email',data.email);
-    fd.append('nombre',data.nombre);
-    fd.append('apellido',data.apellido);
-    fd.append('cedula',data.cedula);
-    fd.append('entidad',data.entidad);
-
-    return this.httpClient.post(environment.registro, fd , {headers: this.headersFiles});
+  // servicio para registro de nuevo usuario
+  registro(data){
+    return this.httpClient.post(environment.registro, data, {headers: this.headers});
   }
 }

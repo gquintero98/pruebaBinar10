@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import{RegisterService} from '../services/register.service';
-// import { loginService } from '../services/login.service';
-
 import { FormBuilder} from '@angular/forms';
-
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -17,6 +16,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formbuilder: FormBuilder,
     private registerService: RegisterService,
+    private router: Router,
+
 
   ) { }
 
@@ -36,30 +37,27 @@ export class RegisterComponent implements OnInit {
 
    
   }
-
+//funcion cargar para adjuntar archivo de imagenes
   cargarImagen(event){
     this.selectedFile=<File>event.target.files[0]
   }
 
-
+//funcion para realizar el registro de usuario
   Register(){
-    // if(!this.form.controls.numero_documento.invalid && !this.form.controls.email.invalid && !this.form.controls.password.invalid){
       let value = this.form.value;
-      // value = value.fecha_nac ? 
-      //   {...value, fecha_nac: value.fecha_nac.toISOString().substring(0, 10)}
-      // : value;
-  
       console.log(value);
-      this.registerService.registro(value,this.selectedFile).subscribe((data) => {
+      this.registerService.registro(this.form.value).subscribe((data) => {
+        Swal.fire(
+          'Usuario creado con exito!',
+          '',
+          'success',
+        )
+        this.router.navigate(['/login']);
         console.log(data)
       },(error) => {
         console.log(error)
-        // this._swal.errorHandler(error);
       })
     }
-    // else{
-    //   console.log('Campos requeridos')
-    // }
+ 
   }
 
-// }
